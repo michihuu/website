@@ -138,7 +138,6 @@ function App() {
                         <Routes>
                             <Route path="/" element={<Home isLight={isLight} personalData={personalData} artData={artData} projectData={projectData} expData={expData} />} />
                             <Route path="/projects" element={<Projects isLight={isLight} numItem={-1} projectData={projectData} />} />
-                            <Route path="/art" element={<Arts isLight={isLight} numItem={-1} artData={artData} />} />
                         </Routes>
                     </div>
                     <Footer isLight={isLight} personalData={personalData} />

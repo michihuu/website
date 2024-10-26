@@ -19,19 +19,19 @@ const Home = ({ isLight, personalData, artData, projectData, expData }) => {
 
                 <section id="project-section" className="pt-32">
                     <div className="flex flex-row justify-between items-center px-10 sm:px-14">
-                        <h1 className='text-2xl font-semibold text-[#5c7ad6]'>Projects</h1>
-                        <NavLink to="/projects" className="text-[#5c7ad6] hover:text-slate-400">See all</NavLink>
+                        <h1 className='text-2xl font-semibold text-[#3d52a1]'>Projects</h1>
+                        <NavLink to="/projects" className="text-[#3d52a1] hover:text-slate-400">See all</NavLink>
                     </div>
                     <ProjectSection isLight={isLight} numItem={3} projectData={projectData} />
                 </section>
 
-                <section id="art-section" className="pt-32">
+                {/* <section id="art-section" className="pt-32">
                     <div className="flex flex-row justify-between items-center px-10 sm:px-14">
-                        <h1 className='text-2xl font-semibold text-[#5c7ad6]'>Arts</h1>
-                        <NavLink to="/art" className="text-[#5c7ad6] hover:text-slate-400">See all</NavLink>
+                        <h1 className='text-2xl font-semibold text-[#3d52a1]'>Arts</h1>
+                        <NavLink to="/art" className="text-[#3d52a1] hover:text-slate-400">See all</NavLink>
                     </div>
                     <ArtSection isLight={isLight} numItem={3} artData={artData} />
-                </section>
+                </section> */}
                 
             </div>
         </div>

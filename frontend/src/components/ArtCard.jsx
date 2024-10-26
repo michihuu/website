@@ -25,7 +25,7 @@ const ArtCard = ({ data, artKey, isLight }) => {
 
                         <div className="flex items-center justify-between flex-wrap ">
                             <div className={"flex flex-wrap flex-row gap-1"}>
-                                {tags.map((tag) => <p className={`py-[2.5px] p-1.5 rounded text-xs text-white bg-[#5c7ad6]`}>{tag.name}</p>)}
+                                {tags.map((tag) => <p className={`py-[2.5px] p-1.5 rounded text-xs text-white bg-[#3d52a1]`}>{tag.name}</p>)}
                             </div>
 
                         </div>

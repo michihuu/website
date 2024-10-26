@@ -1,12 +1,26 @@
-* {}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+    font-family: Poppins;
+}
 
 .lightMode {
-    background-color: white;
+    background-color: #dae1fe;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.headerLightMode {
+    background-color: #EDE8F9;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .darkMode {
     background-color: rgb(41, 41, 41);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.headerDarkMode {
+    background-color: #201f1f;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 

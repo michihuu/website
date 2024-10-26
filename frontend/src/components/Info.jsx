@@ -14,18 +14,26 @@ const Info = ({ isLight, personalData }) => {
     const email = personalData[0].properties.Email.email;
 
     let textColor = isLight ? "text-[#2e313c]" : "text-[#fef8f1c7]";
+    let resumeText = isLight ? "text-[#EDE8F9]" : "text-[#2e313c]";
+    let titleColor = isLight ? "text-[#3d52a1]" : "text-[#adbbda]";
 
-    // nice point colour : bg-[#5c7ad6] button colour
+    // nice point colour : bg-[#3d52a1] button colour
 
     return (
         <>
-            <div id='info-section' className="flex flex-col py-24 px-10 sm:px-14 items-start text-left mb-0 md:mb-12 ">
+        <div class="flex flex-row justify-between items-center sm:px-12 mb-0 md:mb-12">
+            <div class="invisible w-[0px] md:visible md:w-1/3 mr-10">
+                <img src="/profile.png" alt="Profile Photo" className={`rounded-2xl border-2 ${isLight ? "border-[#2e313c]" : "border-[#fef8f1c7]"}`}/>
+            </div>
+            <div id='info-section' className="flex flex-col items-left max-w-[60%]">
                 <h1 className={`title-font text-5xl mb-4 font-semibold ${textColor}`}>{titleText}
                 </h1>
-                <p className="mb-8 leading-relaxed text-[#808080] md:w-2/3 text-base ">{desc1}<br></br>
+                <p className="mb-3 leading-relaxed text-[#808080] text-base ">{desc1}
+                    <br></br>
+                    <br></br>
                     {desc2}</p>
-                <div className="flex justify-start items-end gap-3">
-                    <button className="items-center text-white bg-[#5c7ad6] flex border-0 h-8 px-3 focus:outline-none hover:bg-[#808080] rounded text-lg">
+                <div className="flex justify-start items-center gap-3">
+                    <button className={`items-center ${resumeText} ${isLight ? "bg-[#3d52a1]" : "bg-[#adbbda]"} flex border-0 h-8 px-3 focus:outline-none hover:bg-[#3d52a1] rounded text-lg`}>
                         <a href={resumePdf} target='_blank'>
                             <div className='flex flex-row gap-2 text-base items-center'>
                                 <ResumeLogo className='w-3' />
@@ -35,18 +43,18 @@ const Info = ({ isLight, personalData }) => {
                     </button>
                     <div className={`flex flex-row gap-2.5 items-end mb-1`}>
                         <a href={githubUrl} target='_blank'>
-                            <GithubLogo className={`w-[20px] ${textColor} hover:text-[#5c7ad6]`} />
+                            <GithubLogo className={`w-[20px] ${titleColor} hover:text-[#3d52a1]`} />
                         </a>
                         <a href={linkedinUrl} target='_blank'>
-                            <LinkedinLogo className={`w-[20px] ${textColor} hover:text-[#5c7ad6]`} />
+                            <LinkedinLogo className={`w-[20px] ${titleColor} hover:text-[#3d52a1]`} />
                         </a>
                         <a href={`mailto:${email}`} target='_blank'>
-                            <EmailLogo className={`w-[20px] ${textColor} hover:text-[#5c7ad6]`} />
+                            <EmailLogo className={`w-[20px] ${titleColor} hover:text-[#3d52a1]`} />
                         </a>
                     </div>
-
                 </div>
             </div>
+        </div>
         </>
     )
 }

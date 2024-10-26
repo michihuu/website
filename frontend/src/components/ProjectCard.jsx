@@ -6,8 +6,8 @@ import { ReactComponent as LinkLogo } from '../logos/link.svg'
 const ProjectCard = ({ data, projectKey, isLight }) => {
     const projectTitle = data.properties.Name.title[0].plain_text;
     const description = data.properties.Description.rich_text[0].plain_text;
-    const githubUrl = data.properties.Github.url;
-    const imageUrl = data.cover.file?.url || data.cover.external.url;
+    const githubUrl = data?.properties?.Github?.url || null;
+    const imageUrl = data.properties.File?.files[0]?.file.url || exp.cover.external.url;
     const tags = data.properties.Tags.multi_select;
 
     let textColor = isLight ? "text-[#2e313c]" : "text-[#fef8f1c7]";
@@ -32,14 +32,16 @@ const ProjectCard = ({ data, projectKey, isLight }) => {
                             </div>
 
                             <div className='flex flex-row items-center'>
+                            {githubUrl != 'https://mibowlmeal.com/' && (
                                 <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 border-r-2 border-gray-200">
                                     <a className={""} href={`${githubUrl}`} target='_blank'>
-                                        <GithubLogo className={`w-[22px] h-[22px] ${textColor} hover:text-[#5c7ad6] transition`} />
+                                        <GithubLogo className={`w-[22px] h-[22px] ${textColor} hover:text-[#3d52a1] transition`} />
                                     </a>
                                 </span>
+                            )}
                                 <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                                     <a href={`${githubUrl}`} target='_blank'>
-                                        <LinkLogo className={`w-[20px] h-[20px] ${textColor} hover:text-[#5c7ad6] transition`} />
+                                        <LinkLogo className={`w-[20px] h-[20px] ${textColor} hover:text-[#3d52a1] transition`} />
                                     </a>
                                 </span>
                             </div>

@@ -5,7 +5,9 @@ const ExperienceCard = ({ isLight, exp }) => {
     const positionName = exp.properties.Title.title[0].plain_text;
     const location = exp.properties.Location.rich_text[0].plain_text;
     const description = exp.properties.Description.rich_text[0].plain_text;
-    const imageUrl = exp.cover.file?.url || exp.cover.external.url;
+    const imageUrl = exp.properties.File?.files[0]?.file.url || exp.cover.external.url;
+    console.log("Image URL:", exp.cover.file?.url || exp.cover.external.url);
+    console.log(exp)
     const skills = exp.properties.Skills.multi_select;
     const startDate = exp.properties.Date.date.start || "Incoming";
     const endDate = exp.properties.Date.date.end || "Present";
@@ -29,6 +31,11 @@ const ExperienceCard = ({ isLight, exp }) => {
 
     let formattedDate = (startDate == endDate ? "Incoming" : formatDate(startDate, endDate));
     let textColor = isLight ? "text-[#2e313c]" : "text-[#fef8f1c7]";
+    let subColor = isLight ? "text-[#3d52a1]" : "text-[#adbbda]";
+    let subBgColor = isLight ? "bg-[#3d52a1]" : "bg-[#adbbda]";
+    let flipColor = isLight ? "text-[#EDE8F9]" : "text-[#2e313c]";
+
+
 
     return (
         <>
@@ -38,18 +45,18 @@ const ExperienceCard = ({ isLight, exp }) => {
                 </div>
 
                 <div className='flex flex-row items-start'>
-                    <div className="flex-shrink-0 w-4 h-4 rounded-full mt-8 sm:mt-7 inline-flex items-center justify-center bg-indigo-500  relative left-1  z-10 title-font font-medium text-sm"></div>
+                    <div className={`flex-shrink-0 w-4 h-4 rounded-full mt-8 sm:mt-7 inline-flex items-center justify-center ${subBgColor}  relative left-1  z-10 title-font font-medium text-sm`}></div>
 
                     <div className="flex-grow px-6 flex sm:items-start flex-col sm:flex-row">
                         <img className="rounded-md object-cover w-16 h-16 border border-gray-200 border-opacity-60" src={imageUrl} alt=""></img>
                         <div className="flex-grow sm:pl-5 mt-4 sm:mt-0">
                             <p className="leading-relaxed text-sm text-[#808080]">{formattedDate}</p>
-                            <h2 className={`font-medium title-font ${textColor} mb-1 text-lg`}>{companyName}</h2>
-                            <h3 className="font-medium title-font text-[#5c7ad6] mb-1 text-base">{positionName}</h3>
+                            <h1 className={`font-medium title-font ${textColor} mb-1 text-lg`}>{companyName}</h1>
+                            <h2 className={`font-medium title-font ${subColor} mb-1 text-base`}>{positionName}</h2>
                             <p className="leading-relaxed text-sm text-[#808080] mb-2">{location}</p>
                             <p className="leading-relaxed text-base text-[#808080] mb-2">{description}</p>
                             <div className={"flex flex-wrap flex-row gap-1"}>
-                                {skills.map((skill) => <p className={`py-[2.5px] p-1.5 rounded text-xs text-white bg-[#5c7ad6]`}>{skill.name}</p>)}
+                                {skills.map((skill) => <p className={`py-[2.5px] p-1.5 rounded text-xs ${flipColor} ${subBgColor}`}>{skill.name}</p>)}
                             </div>
                         </div>
                     </div>

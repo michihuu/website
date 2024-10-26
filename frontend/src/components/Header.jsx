@@ -14,6 +14,7 @@ const Header = ({ toggleMode, isLight, personalData }) => {
     const [isOpen, setOpen] = useState(false)
 
     let textColor = isLight ? "text-[#2e313c]" : "text-[#fef8f1c7]";
+    let iconColor = isLight ? "text-white" : "text-[#2e313c]";
 
     const resumePdf = personalData[0].properties.Resume.files[0].file.url;
     const githubUrl = personalData[0].properties.Github.url;
@@ -42,41 +43,38 @@ const Header = ({ toggleMode, isLight, personalData }) => {
     return (
         <>
             {/* PC header (md ~) */}
-            <header className={`invisible md:visible header-class text-gray-600 body-font ${isLight ? "lightMode" : "darkMode"} z-20`}>
+            <header className={`invisible md:visible header-class text-gray-600 body-font ${isLight ? "headerLightMode" : "headerDarkMode"} z-20`}>
                 {/* pc header (md ~) */}
                 <div className=" container mx-auto flex flex-wrap px-10 sm:px-14 py-4 flex-row items-center">
-                    <a className={`flex title-font font-semibold items-center ${textColor} md:mb-0`}>
-                        <span className="text-2xl text-[#5c7ad6]">CuriousR</span>
-                    </a>
+                <a className="">
+                    <img src="/android-chrome-512x512.png" alt="Chrome Icon" className="h-14 w-14"/>
+                </a>
                     <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
 
-                        <button onClick={() => toSection("home-section")} className={` mr-5 ${textColor} hover:text-[#5c7ad6] `}>
+                        <button onClick={() => toSection("home-section")} className={` mr-5 ${textColor} hover:text-[#3d52a1] `}>
                             HOME
                         </button>
-                        <button onClick={() => toSection("experience-section")} className={` mr-5 ${textColor} hover:text-[#5c7ad6] `}>
+                        <button onClick={() => toSection("experience-section")} className={` mr-5 ${textColor} hover:text-[#3d52a1] `}>
                             EXPERIENCES
                         </button>
 
-                        <button onClick={() => toSection("project-section")} className={` mr-5 ${textColor} hover:text-[#5c7ad6]`}>
+                        <button onClick={() => toSection("project-section")} className={` mr-5 ${textColor} hover:text-[#3d52a1]`}>
                             PROJECTS
-                        </button>
-                        <button onClick={() => toSection("art-section")} className={` mr-5 ${textColor} hover:text-[#5c7ad6]`}>
-                            ART
                         </button>
                     </nav>
 
                     <span className="flex flex-row gap-3 items-end mr-5">
                         <a href={resumePdf} target='_blank'>
-                            <ResumeLogo className={`w-[14px] ${textColor} hover:text-[#5c7ad6]`} />
+                            <ResumeLogo className={`w-[14px] ${textColor} hover:text-[#3d52a1]`} />
                         </a>
                         <a href={githubUrl} target='_blank'>
-                            <GithubLogo className={`w-[18px] ${textColor} hover:text-[#5c7ad6]`} />
+                            <GithubLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                         </a>
                         <a href={linkedinUrl} target='_blank'>
-                            <LinkedinLogo className={`w-[18px] ${textColor} hover:text-[#5c7ad6]`} />
+                            <LinkedinLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                         </a>
                         <a href={`mailto:${email}`} target='_blank'>
-                            <EmailLogo className={`w-[18px] ${textColor} hover:text-[#5c7ad6]`} />
+                            <EmailLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                         </a>
                     </span>
 
@@ -84,7 +82,7 @@ const Header = ({ toggleMode, isLight, personalData }) => {
                         <DarkModeToggle
                             mode={mode}
                             size="sm"
-                            inactiveTrackColor="#e2e8f0"
+                            inactiveTrackColor="white"
                             inactiveTrackColorOnHover="#f8fafc"
                             inactiveTrackColorOnActive="#cbd5e1"
                             activeTrackColor="#334155"
@@ -103,11 +101,11 @@ const Header = ({ toggleMode, isLight, personalData }) => {
 
             {/* mobile header (~ md) */}
             <header className={`visible md:invisible header-class text-gray-600 body-font ${isOpen ? "shadow-[0_0px_25px_-5px_rgba(158,158,158,0.4)]" : ""} 
-                                ${isLight ? "lightMode" : "darkMode"} z-20`}>
+                                ${isLight ? "headerLightMode" : "headerDarkMode"} z-20`}>
                 <div className="transition container mx-auto flex flex-col px-10 sm:px-14 py-2 gap-3 items-start">
                     <div className="flex flex-row justify-between w-full">
                         <a className={`flex title-font font-semibold items-center ${textColor} mb-0`}>
-                            <span className="text-2xl text-[#5c7ad6]">CuriousR</span>
+                            <span className="text-xl">MH</span>
                         </a>
 
                         <Hamburger toggled={isOpen} toggle={setOpen} color={isLight ? "#2e313c" : "#fef8f1c7"} />
@@ -116,16 +114,16 @@ const Header = ({ toggleMode, isLight, personalData }) => {
                     {isOpen &&
                         <>
                             <nav className="fade-on-load flex flex-wrap items-center text-sm sm:text-base justify-center gap-4">
-                                <button onClick={() => toSection("home-section")} className={`${textColor} hover:text-[#5c7ad6]`}>
+                                <button onClick={() => toSection("home-section")} className={`${textColor} hover:text-[#3d52a1]`}>
                                     HOME
                                 </button>
-                                <button onClick={() => toSection("experience-section")} className={`${textColor} hover:text-[#5c7ad6] `}>
+                                <button onClick={() => toSection("experience-section")} className={`${textColor} hover:text-[#3d52a1] `}>
                                     EXPERIENCES
                                 </button>
-                                <button onClick={() => toSection("project-section")} className={`${textColor} hover:text-[#5c7ad6]`}>
+                                <button onClick={() => toSection("project-section")} className={`${textColor} hover:text-[#3d52a1]`}>
                                     PROJECTS
                                 </button>
-                                <button onClick={() => toSection("art-section")} className={`${textColor} hover:text-[#5c7ad6]`}>
+                                <button onClick={() => toSection("art-section")} className={`${textColor} hover:text-[#3d52a1]`}>
                                     ART
                                 </button>
                             </nav>
@@ -133,16 +131,16 @@ const Header = ({ toggleMode, isLight, personalData }) => {
                             <div className="fade-on-load flex flex-row w-full justify-between pb-3 items-center">
                                 <span className="flex flex-row gap-3 items-end ">
                                     <a href={resumePdf} target='_blank'>
-                                        <ResumeLogo className={`w-[14px] ${textColor} hover:text-[#5c7ad6]`} />
+                                        <ResumeLogo className={`w-[14px] ${textColor} hover:text-[#3d52a1]`} />
                                     </a>
                                     <a href={githubUrl} target='_blank'>
-                                        <GithubLogo className={`w-[18px] ${textColor} hover:text-[#5c7ad6]`} />
+                                        <GithubLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                                     </a>
                                     <a href={linkedinUrl} target='_blank'>
-                                        <LinkedinLogo className={`w-[18px] ${textColor} hover:text-[#5c7ad6]`} />
+                                        <LinkedinLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                                     </a>
                                     <a href={`mailto:${email}`} target='_blank'>
-                                        <EmailLogo className={`w-[18px] ${textColor} hover:text-[#5c7ad6]`} />
+                                        <EmailLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                                     </a>
                                 </span>
 
@@ -150,7 +148,7 @@ const Header = ({ toggleMode, isLight, personalData }) => {
                                     <DarkModeToggle
                                         mode={mode}
                                         size="sm"
-                                        inactiveTrackColor="#e2e8f0"
+                                        inactiveTrackColor="white"
                                         inactiveTrackColorOnHover="#f8fafc"
                                         inactiveTrackColorOnActive="#cbd5e1"
                                         activeTrackColor="#334155"
