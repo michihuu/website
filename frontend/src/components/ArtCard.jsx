@@ -4,7 +4,7 @@ const ArtCard = ({ data, artKey, isLight }) => {
     const projectTitle = data.properties.Name.title[0].plain_text;
     const description = data.properties.Description.rich_text[0].plain_text;
     const portfolioUrl = data.properties.Portfolio.url;
-    const imageUrl = data.cover.file?.url || data.cover.external.url;
+    const imageUrl = data.properties.File?.files[0]?.file.url || data.cover.external.url;
     const tags = data.properties.Tags.multi_select;
 
     let textColor = isLight ? "text-[#2e313c]" : "text-[#fef8f1c7]";
