@@ -24,6 +24,16 @@ import { ReactComponent as CPPLight } from "../logos/cpp-light.svg";
 import { ReactComponent as CPPDark } from "../logos/cpp-dark.svg";
 import { ReactComponent as TailwindLight } from "../logos/tailwind-light.svg";
 import { ReactComponent as TailwindDark } from "../logos/tailwind-dark.svg";
+import { ReactComponent as FigmaLight } from "../logos/figma-light.svg";
+import { ReactComponent as FigmaDark } from "../logos/figma-dark.svg";
+import { ReactComponent as VueLight } from "../logos/vue-light.svg";
+import { ReactComponent as VueDark } from "../logos/vue-dark.svg";
+import { ReactComponent as SpringBootLight } from "../logos/springboot-light.svg";
+import { ReactComponent as SpringBootDark } from "../logos/springboot-dark.svg";
+import { ReactComponent as JavaLight } from "../logos/java-light.svg";
+import { ReactComponent as JavaDark } from "../logos/java-dark.svg";
+import { ReactComponent as TypescriptLight } from "../logos/typescript-light.svg";
+import { ReactComponent as TypescriptDark } from "../logos/typescript-dark.svg";
 
 function strToLogo(str, isLight) {
     if (isLight) {
@@ -54,6 +64,16 @@ function strToLogo(str, isLight) {
                 return <CPPLight className={"w-[26px] h-[26px]"} />
             case "TailwindCSS":
                 return <TailwindLight className={"w-[26px] h-[26px]"} />
+            case "Figma":
+                return <FigmaLight className={"w-6 h-6"} />
+            case "VueJS":
+                return <VueLight className={"w-6 h-6"} />
+            case "SpringBoot":
+                return <SpringBootLight className={"w-6 h-6"} />
+            case "Java":
+                return <JavaLight className={"w-6 h-6"} />
+            case "Typescript":
+                return <TypescriptLight className={"w-5 h-5"} />
             default:
                 return <></>
         }
@@ -85,6 +105,16 @@ function strToLogo(str, isLight) {
                 return <CPPDark className={"w-[26px] h-[26px]"} />
             case "TailwindCSS":
                 return <TailwindDark className={"w-[26px] h-[26px]"} />
+            case "Figma":
+                return <FigmaDark className={"w-6 h-6 p-0 m-0"} />
+            case "VueJS":
+                return <VueDark className={"w-6 h-6"} />
+            case "SpringBoot":
+                return <SpringBootDark className={"w-6 h-6"} />
+            case "Java":
+                return <JavaDark className={"w-6 h-6"} />
+            case "Typescript":
+                return <TypescriptDark className={"w-5 h-5"} />
             default:
                 return <></>
         }

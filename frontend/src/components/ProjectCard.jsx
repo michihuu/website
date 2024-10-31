@@ -32,18 +32,20 @@ const ProjectCard = ({ data, projectKey, isLight }) => {
                             </div>
 
                             <div className='flex flex-row items-center'>
-                            {githubUrl != 'https://mibowlmeal.com/' && (
+                            {githubUrl != 'https://mibowlmeal.com/' && githubUrl != null && (
                                 <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 border-r-2 border-gray-200">
                                     <a className={""} href={`${githubUrl}`} target='_blank'>
                                         <GithubLogo className={`w-[22px] h-[22px] ${textColor} hover:text-[#3d52a1] transition`} />
                                     </a>
                                 </span>
                             )}
-                                <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                                    <a href={`${githubUrl}`} target='_blank'>
-                                        <LinkLogo className={`w-[20px] h-[20px] ${textColor} hover:text-[#3d52a1] transition`} />
-                                    </a>
-                                </span>
+                                {githubUrl != null && (
+                                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
+                                        <a href={`${githubUrl}`} target='_blank'>
+                                            <LinkLogo className={`w-[20px] h-[20px] ${textColor} hover:text-[#3d52a1] transition`} />
+                                        </a>
+                                    </span>
+                                )}
                             </div>
 
                         </div>
