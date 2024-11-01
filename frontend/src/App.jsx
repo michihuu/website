@@ -21,7 +21,7 @@ function App() {
     const toggleMode = () => { setIsLight(!isLight); };
 
     // fetch data here from the server of this link
-    const APILink = "http://localhost:4000";
+    const APILink = "https://website-7o6r.vercel.app";
     // Later, change this to your own vercel server link.
     // const APILink = process.env.REACT_APP_VERCEL_SERVER_LINK;
 
