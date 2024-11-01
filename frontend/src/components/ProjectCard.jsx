@@ -7,6 +7,7 @@ const ProjectCard = ({ data, projectKey, isLight }) => {
     const projectTitle = data.properties.Name.title[0].plain_text;
     const description = data.properties.Description.rich_text[0].plain_text;
     const githubUrl = data?.properties?.Github?.url || null;
+    const linkUrl = data?.properties?.Link?.url || null;
     const imageUrl = data.properties.File?.files[0]?.file.url || data.cover.external.url;
     const tags = data.properties.Tags.multi_select;
 
@@ -39,9 +40,9 @@ const ProjectCard = ({ data, projectKey, isLight }) => {
                                     </a>
                                 </span>
                             )}
-                                {githubUrl != null && (
+                                {linkUrl != null && (
                                     <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                                        <a href={`${githubUrl}`} target='_blank'>
+                                        <a href={`${linkUrl}`} target='_blank'>
                                             <LinkLogo className={`w-[20px] h-[20px] ${textColor} hover:text-[#3d52a1] transition`} />
                                         </a>
                                     </span>
