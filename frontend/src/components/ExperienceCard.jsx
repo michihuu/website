@@ -51,6 +51,7 @@ const ExperienceCard = ({ isLight, exp }) => {
                         <img className="rounded-md object-cover w-16 h-16 border border-gray-200 border-opacity-60" src={imageUrl} alt=""></img>
                         <div className="flex-grow sm:pl-5 mt-4 sm:mt-0">
                             <p className="leading-relaxed text-sm text-[#808080]">{formattedDate}</p>
+                            {companyName === "CI Technologies - Versaterm" && <p className="leading-relaxed text-sm text-[#808080]">September 2024 - December 2024</p>}
                             <h1 className={`font-medium title-font ${textColor} mb-1 text-lg`}>{companyName}</h1>
                             <h2 className={`font-medium title-font ${subColor} mb-1 text-base`}>{positionName}</h2>
                             <p className="leading-relaxed text-sm text-[#808080] mb-2">{location}</p>
