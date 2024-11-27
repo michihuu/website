@@ -26,9 +26,11 @@ export default function Footer({ isLight, personalData }) {
                                 <a href={resumePdf} target='_blank'>
                                     <ResumeLogo className={`w-[14px] ${textColor} hover:text-[#3d52a1]`} />
                                 </a>
+                                {/*
                                 <a href={githubUrl} target='_blank'>
                                     <GithubLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                                 </a>
+                                */}
                                 <a href={linkedinUrl} target='_blank'>
                                     <LinkedinLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                                 </a>

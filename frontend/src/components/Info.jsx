@@ -17,21 +17,20 @@ const Info = ({ isLight, personalData }) => {
     let resumeText = isLight ? "text-[#EDE8F9]" : "text-[#2e313c]";
     let titleColor = isLight ? "text-[#3d52a1]" : "text-[#adbbda]";
 
-    // nice point colour : bg-[#3d52a1] button colour
-
     return (
         <>
-        <div class="flex flex-row justify-between items-center sm:px-12 mb-0 md:mb-12">
-            <div class="invisible w-[0px] md:visible md:w-1/3 mr-10">
-                <img src="/profile.png" alt="Profile Photo" className={`rounded-2xl border-2 ${isLight ? "border-[#2e313c]" : "border-[#fef8f1c7]"}`}/>
+        <div className="flex flex-col sm:flex-row justify-between items-center px-4 mb-0 md:mb-12">
+            <div className="w-full sm:w-1/3 sm:mr-10 mb-6 sm:mb-0 max-w-[400px] sm:max-w-[1000px]">
+                <img src="/profile.png" alt="Profile Photo" className={`rounded-2xl border-2 mx-auto ${isLight ? "border-[#2e313c]" : "border-[#fef8f1c7]"}`}/>
             </div>
-            <div id='info-section' className="flex flex-col items-left max-w-[60%]">
-                <h1 className={`title-font text-5xl mb-4 font-semibold ${textColor}`}>{titleText}
-                </h1>
-                <p className="mb-3 leading-relaxed text-[#808080] text-base ">{desc1}
-                    <br></br>
-                    <br></br>
-                    {desc2}</p>
+            <div id='info-section' className="flex flex-col items-start max-w-full sm:max-w-[60%] p-4 sm:p-0">
+                <h1 className={`title-font text-5xl mb-4 font-semibold ${textColor}`}>{titleText}</h1>
+                <p className="mb-3 leading-relaxed text-[#808080] text-base">
+                    {desc1}
+                    <br />
+                    <br />
+                    {desc2}
+                </p>
                 <div className="flex justify-start items-center gap-3">
                     <button className={`items-center ${resumeText} ${isLight ? "bg-[#3d52a1]" : "bg-[#adbbda]"} flex border-0 h-8 px-3 focus:outline-none hover:bg-[#3d52a1] rounded text-lg`}>
                         <a href={resumePdf} target='_blank'>
@@ -42,9 +41,11 @@ const Info = ({ isLight, personalData }) => {
                         </a>
                     </button>
                     <div className={`flex flex-row gap-2.5 items-end mb-1`}>
+                         {/*
                         <a href={githubUrl} target='_blank'>
-                            <GithubLogo className={`w-[20px] ${titleColor} hover:text-[#3d52a1]`} />
+                            <GithubLogo className={w-[20px] ${titleColor} hover:text-[#3d52a1]} />
                         </a>
+                        */}
                         <a href={linkedinUrl} target='_blank'>
                             <LinkedinLogo className={`w-[20px] ${titleColor} hover:text-[#3d52a1]`} />
                         </a>

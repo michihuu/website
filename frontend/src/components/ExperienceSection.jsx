@@ -9,7 +9,7 @@ const ExperienceSection = ({ isLight, expData }) => {
                 <div className="container px-10 sm:px-14 flex flex-col ">
                     <h1 className={`text-3xl font-semibold ${textColor} mb-6`}>Experiences</h1>
                     {expData && expData.map((exp, index) => {
-                        return <ExperienceCard isLight={isLight} exp={exp} />
+                        return <ExperienceCard key={index} isLight={isLight} exp={exp} />
                     })}
                 </div>
             </section>

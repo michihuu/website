@@ -67,9 +67,11 @@ const Header = ({ toggleMode, isLight, personalData }) => {
                         <a href={resumePdf} target='_blank'>
                             <ResumeLogo className={`w-[14px] ${textColor} hover:text-[#3d52a1]`} />
                         </a>
+                        {/*
                         <a href={githubUrl} target='_blank'>
                             <GithubLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                         </a>
+                        */}
                         <a href={linkedinUrl} target='_blank'>
                             <LinkedinLogo className={`w-[18px] ${textColor} hover:text-[#3d52a1]`} />
                         </a>
@@ -104,8 +106,8 @@ const Header = ({ toggleMode, isLight, personalData }) => {
                                 ${isLight ? "headerLightMode" : "headerDarkMode"} z-20`}>
                 <div className="transition container mx-auto flex flex-col px-10 sm:px-14 py-2 gap-3 items-start">
                     <div className="flex flex-row justify-between w-full">
-                        <a className={`flex title-font font-semibold items-center ${textColor} mb-0`}>
-                            <span className="text-xl">MH</span>
+                    <a className="">
+                        <img src="/android-chrome-512x512.png" alt="Chrome Icon" className="h-12 w-12"/>
                         </a>
 
                         <Hamburger toggled={isOpen} toggle={setOpen} color={isLight ? "#2e313c" : "#fef8f1c7"} />

@@ -39,10 +39,10 @@ function App() {
 
                 const dataFromServer = await response.json();
                 setArtData(dataFromServer.results);
-                console.log(dataFromServer.results);
+                //console.log(dataFromServer.results);
                 setArtLoading(false);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                //console.error('Error fetching data:', error);
                 setArtLoading(false);
             }
         };
@@ -64,10 +64,10 @@ function App() {
 
                 const dataFromServer = await response.json();
                 setProjectData(dataFromServer.results);
-                console.log(dataFromServer.results);
+                //console.log(dataFromServer.results);
                 setProjectLoading(false);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                //console.error('Error fetching data:', error);
                 setProjectLoading(false);
             }
         };
@@ -89,10 +89,10 @@ function App() {
 
                 const dataFromServer = await response.json();
                 setExpData(dataFromServer.results);
-                console.log(dataFromServer.results);
+                //console.log(dataFromServer.results);
                 setExpLoading(false);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                //console.error('Error fetching data:', error);
                 setExpLoading(false);
             }
         };
@@ -114,10 +114,10 @@ function App() {
 
                 const dataFromServer = await response.json();
                 setPersonalData(dataFromServer.results);
-                console.log(dataFromServer.results);
+                //console.log(dataFromServer.results);
                 setPersonalLoading(false);
             } catch (error) {
-                console.error('Error fetching data:', error);
+                //console.error('Error fetching data:', error);
                 setPersonalLoading(false);
             }
         };
@@ -127,7 +127,7 @@ function App() {
 
 
     // checking for loading completion on console
-    if (!artLoading && !projectLoading && !expLoading && !personalLoading) console.log("finished loading");
+    //if (!artLoading && !projectLoading && !expLoading && !personalLoading) console.log("finished loading");
 
     return (
         <>

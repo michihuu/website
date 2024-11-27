@@ -14,11 +14,11 @@ const Home = ({ isLight, personalData, artData, projectData, expData }) => {
             <div className="container mx-auto flex gap-0 sm:gap-20 flex-col mt-28 sm:mt-56 ">
 
                 <Info isLight={isLight} personalData={personalData} projectData={projectData} />
-                <section id="experience-section" className="pt-32">
+                <section id="experience-section" className="pt-20">
                 <ExperienceSection isLight={isLight} expData={expData} />
                 </section>
 
-                <section id="project-section" className="pt-32">
+                <section id="project-section" className="pt-20">
                     <div className="flex flex-row justify-between items-center px-10 sm:px-14">
                     <h1 className={`text-3xl font-semibold ${textColor} mb-6`}>Projects</h1>
                         <NavLink to="/projects" className={`text-xl font-semibold ${textColor} mb-6 hover:text-slate-400`}>See all</NavLink>
